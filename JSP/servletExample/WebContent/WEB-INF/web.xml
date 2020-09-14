@@ -22,5 +22,23 @@
 		<url-pattern>/EX</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>pe</servlet-name>
+		<servlet-class>com.servlet.paramEx</servlet-class>
+		
+		<init-param>
+			<param-name>adminId</param-name>
+			<param-value>admin</param-value>
+		</init-param>
+		<init-param>
+			<param-name>adminPw</param-name>
+			<param-value>4827</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>pe</servlet-name>
+		<url-pattern>/pe</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
 
