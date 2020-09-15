@@ -7,18 +7,26 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
 import com.bookDTO.BookDTO;
 
 public class BookDAO {
 
-	String driver = "oracle.jdbc.driver.OracleDriver";
-	String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	String id = "scott";
-	String pw = "tiger";
+	DataSource ds;
+
+//	String driver = "oracle.jdbc.driver.OracleDriver";
+//	String url = "jdbc:oracle:thin:@localhost:1521:xe";
+//	String id = "scott";
+//	String pw = "tiger";
 
 	public BookDAO() {
 		// 생성자에서 드라이버 연결의 작업을 한다..
 		try {
+			Context context = new InitialContext();
+			ds = (DataSource)context.lookup("java:comp/env/jdbc/Oracle11g");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -33,7 +41,8 @@ public class BookDAO {
 		ResultSet rs = null;
 
 		try {
-			con = DriverManager.getConnection(url, id, pw);
+			con = ds.getConnection();
+			//con = DriverManager.getConnection(url, id, pw);
 			String sql = "SELECT * FROM book ORDER BY BOOK_ID DESC";
 			stmt = con.prepareStatement(sql);
 			rs = stmt.executeQuery();
