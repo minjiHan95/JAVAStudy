@@ -187,3 +187,78 @@
 배열 내에서 무언가를 찾고 싶을 때 쓰는 메서드에 대하여 알아보자.
 */
 
+//배열 과제 1
+// function camelize(str) {
+//     let arr = str.split("-").map(
+//         (word, index) =>
+//             index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+//     ).join("");
+//     return arr;
+// }
+// console.log(camelize("mama-koko-jiji"));
+
+// function filterRage(arr, a, b) {
+//     let result = arr.filter(item =>
+//         (item >= a && item <= b)
+//     );
+//     console.log(result);
+
+// }
+
+// filterRangeInPlace([5, 3, 8, 1], 1, 4);
+
+// //배열 arr의 요소 중 a와 b 사이에 속하지 않는 요소는 삭제해주는 함수
+// function filterRangeInPlace(arr, a, b) {
+//     for (let index in arr) {
+//         if ((arr[index] < a || arr[index] > b)) {
+//             console.log(arr[index]);
+//             arr.splice(index, 1);
+//         }
+//     }
+//     console.log(arr);
+// }
+
+
+// //내림차순으로 정렬하기
+// let arr = [5, 2, 1, -10, 8];
+// arr.sort((a, b)=>b-a);
+// console.log(arr);
+
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+
+// let users = [john, pete, mary];
+
+// console.log(users);
+
+// let name = users.map(item => item.name);
+// console.log(name);
+
+// let john = { name: "John", surname: "Smith", id: 1 };
+// let pete = { name: "Pete", surname: "Hunt", id: 2 };
+// let mary = { name: "Mary", surname: "Key", id: 3 };
+
+// let users = [john, pete, mary];
+
+// let usersMapped = users.map(item =>
+//     //중괄호 {를 만나면 자바스크립트는 이를 객체의 시작이라 인식하지 않고 함수 본문이 시작되는 것이라 인식합니다. 소괄호를 사용하면 이를 피할 수 있습니다.
+//     ({
+//         fullName: item.name + " " + item.surname,
+//         id: item.id
+//     }));
+// console.log(usersMapped);
+
+// 나이를 기준으로 객체 정렬하기
+// 중요도: 5
+// 프로퍼티 age가 있는 객체가 담긴 배열이 있습니다. 이 배열을 age를 기준으로 정렬해주는 함수 sortByAge(users)를 만들어보세요.
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let arr = [pete, john, mary];
+
+function sortByAge(users) {
+    return users.sort((a, b) => a.age - b.age);
+}
+console.log(sortByAge(arr));
