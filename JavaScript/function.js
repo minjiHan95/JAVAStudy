@@ -249,16 +249,85 @@
 //     }));
 // console.log(usersMapped);
 
-// 나이를 기준으로 객체 정렬하기
-// 중요도: 5
-// 프로퍼티 age가 있는 객체가 담긴 배열이 있습니다. 이 배열을 age를 기준으로 정렬해주는 함수 sortByAge(users)를 만들어보세요.
-let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 28 };
+// // 나이를 기준으로 객체 정렬하기
+// // 중요도: 5
+// // 프로퍼티 age가 있는 객체가 담긴 배열이 있습니다. 이 배열을 age를 기준으로 정렬해주는 함수 sortByAge(users)를 만들어보세요.
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
 
-let arr = [pete, john, mary];
+// let arr = [pete, john, mary];
 
-function sortByAge(users) {
-    return users.sort((a, b) => a.age - b.age);
+// function sortByAge(users) {
+//     return users.sort((a, b) => a.age - b.age);
+// }
+// console.log(sortByAge(arr));
+
+
+// let map = new Map();
+// map.set(1, "number");
+
+// //객체는 키를 문자형으로 변환한다.
+// //맵은 키의 타입을 변환시키지 않고 그대로 유지한다. 따라서 아래의 코드는 출력되는 값이 다르다.
+// map.set("1", "string");
+// console.log(map.get(1)); //number
+// console.log(map.get("1")); //string
+// console.log(map);
+
+//객체를 키로 사용할 수 있다는 점은 맵의 가장 중요한 기능 중 하나이다. 객체에는 문자열 키를 사용할 수 있다. 하지만 객체 키는 사용할 수 없다.
+
+// let john = {name: "minji", age:26};
+// let map = new Map();
+// //map의 키를 객체인 John으로 설정한다.
+// map.set(john, 123); 
+
+// //맵의 요소에 반복 잡업하기 위해서는 세가지 메서드가 필요하다.
+
+// let map = new Map([
+//     ["minji", 100],
+//     ["kkk", 200],
+//     ["fff", 300],
+//     ["sss", 400],
+//     ["ddd", 500],
+// ]
+// );
+
+// for (let key of map.keys()) {
+//     console.log(key);
+// }
+// for (let value of map.values()) {
+//     console.log(value);
+// }
+// for (let key of map) {
+//     console.log(key);
+// }
+
+// //배열에서 중복 요소 제거하기
+// function unique(arr) {
+//     return new Set(arr);
+// }
+
+// let values = ["Hare", "Krishna", "Hare", "Krishna",
+//     "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// ];
+// console.log(unique(values));
+
+
+// let room = {
+//     number: 23,
+// };
+
+// let meetup = {
+//     title: "Conference",
+//     occ
+// }
+
+console.log(sumAll(1, 2, 3));
+
+function sumAll(...arr) {
+    let sum = 0;
+    for (let value of arr) {
+        sum += value;
+    }
+    return sum;
 }
-console.log(sortByAge(arr));
