@@ -13,15 +13,23 @@ lexical: 선언 당시의 환경에 대한 정보를 담는 객체(구성 환경
 최초 선언시의 정보를 유지한다 -> 클로저의 핵심
 */
 
-//접근권한 제어
-function a() {
-    var _x = 1;
-    return {
-        get x() {
-            return _x;
-        },
-        set x(v) {
-            _x = v;
-        }
-    }
+// //접근권한 제어
+// function a() {
+//     var _x = 1;
+//     return {
+//         get x() {
+//             return _x;
+//         },
+//         set x(v) {
+//             _x = v;
+//         }
+//     }
+// }
+
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
 }
+let minji = new Person('minji', 26);
+
+let minjiClone1 = new minji.__proto__.constructor("minji clone1", 10);

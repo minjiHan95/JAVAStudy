@@ -19,15 +19,15 @@
 
 // printNumbers(5, 10);
 
-// Using nested setTimeout.
-function printNumbers(from, to) {
-    let current = from;
-    setTimeout(function tick() {
-        console.log(current);
-        if (current < to) {
-            setTimeout(tick, 1000);
-        }
-        current++;
-    }, 1000);
-}
-printNumbers(5, 10);
+// // Using nested setTimeout.
+// function printNumbers(from, to) {
+//     let current = from;
+//     setTimeout(function tick() {
+//         console.log(current);
+//         if (current < to) {
+//             setTimeout(tick, 1000);
+//         }
+//         current++;
+//     }, 1000);
+// }
+// printNumbers(5, 10);
